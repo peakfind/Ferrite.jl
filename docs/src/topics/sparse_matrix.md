@@ -74,8 +74,8 @@ with linear Lagrange interpolation) this would be reduced to 216 MB.
 
     Moreover, if the problem is solved with periodic boundary conditions, for example by
     constraining the value on the right side to the value on the left side, there will be
-    additional couplings. In the example above, this means that DoF 4 should be equal to DoF
-    1. Since DoF 4 is constrained it has to be eliminated from the system. Existing entries
+    additional couplings. In the example above, this means that DoF 4 should be equal to DoF 1. 
+    Since DoF 4 is constrained it has to be eliminated from the system. Existing entries
     that include DoF 4 are `(3, 4)`, `(4, 3)`, and `(4, 4)`. Given the simple constraint in
     this case we can simply replace DoF 4 with DoF 1 in these entries and we end up with
     entries `(3, 1)`, `(1, 3)`, and `(1, 1)`. This results in two new entries: `(3, 1)` and
