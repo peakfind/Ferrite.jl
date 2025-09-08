@@ -967,7 +967,8 @@ function add!(ch::ConstraintHandler, dbc::Dirichlet)
             EntityType = FacetIndex
         end
         CT = getcelltype(sdh) # Same celltype enforced in SubDofHandler constructor
-        bcvalues = BCValues(interpolation, geometric_interpolation(CT), EntityType)
+        # bcvalues = BCValues(interpolation, geometric_interpolation(CT), EntityType)
+        bcvalues = BCValues(ComplexF64, interpolation, geometric_interpolation(CT), EntityType)
         # Recreate the Dirichlet(...) struct with the filtered set and call internal add!
         filtered_dbc = Dirichlet(dbc.field_name, filtered_set, dbc.f, components)
         _add!(
